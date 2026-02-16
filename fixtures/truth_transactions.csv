@@ -1,0 +1,11 @@
+source,source_account,source_id,occurred_at,posted_at,currency,direction,amount_gross,fee_amount,amount_net,counterparty,description,raw_hash
+stripe,acct_demo_001,txn_001,2026-01-15,2026-01-15,USD,credit,100.000000,2.900000,97.100000,Alice Corp,Invoice #1001,a1b2c3d4
+stripe,acct_demo_001,txn_002,2026-01-15,2026-01-15,USD,credit,250.000000,7.550000,242.450000,Bob LLC,Invoice #1002,e5f6a7b8
+stripe,acct_demo_001,txn_003,2026-01-15,2026-01-15,USD,debit,50.000000,0.000000,50.000000,Charlie Inc,Refund #R001,c9d0e1f2
+stripe,acct_demo_001,txn_004,2026-01-16,2026-01-16,USD,credit,500.000000,14.800000,485.200000,Delta Partners,Invoice #1003,d3e4f5a6
+stripe,acct_demo_001,txn_005,2026-01-16,2026-01-16,USD,credit,175.000000,5.375000,169.625000,Echo Systems,Invoice #1004,b7c8d9e0
+stripe,acct_demo_001,txn_006,2026-01-17,2026-01-17,USD,credit,320.000000,9.580000,310.420000,Foxtrot Ltd,Invoice #1005,f1a2b3c4
+stripe,acct_demo_001,txn_007,2026-01-17,2026-01-17,USD,credit,80.000000,2.620000,77.380000,Golf Corp,Invoice #1006,a5b6c7d8
+stripe,acct_demo_001,txn_008,2026-01-17,2026-01-17,USD,debit,25.000000,0.000000,25.000000,Hotel Inc,Refund #R002,e9f0a1b2
+stripe,acct_demo_001,txn_009,2026-01-18,2026-01-18,USD,credit,1200.000000,35.100000,1164.900000,India Ventures,Invoice #1007,c3d4e5f6
+stripe,acct_demo_001,txn_010,2026-01-18,2026-01-18,USD,credit,95.000000,3.055000,91.945000,Juliet Co,Invoice #1008,a7b8c9d0

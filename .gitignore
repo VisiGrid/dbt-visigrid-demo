@@ -1,0 +1,5 @@
+seeds/
+warehouse_out/
+target/
+logs/
+dbt_packages/

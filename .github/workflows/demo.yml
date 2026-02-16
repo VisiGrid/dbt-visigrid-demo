@@ -1,0 +1,43 @@
+name: Demo
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * *" # nightly at 06:00 UTC
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dbt-duckdb
+        run: pip install dbt-duckdb duckdb
+
+      - name: Install vgrid
+        run: |
+          # Build from source (adjust path if using a release binary)
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+          source "$HOME/.cargo/env"
+          cargo install --path ../visigrid/app/crates/cli || {
+            echo "::warning::vgrid not available from source, skipping"
+            exit 1
+          }
+
+      - name: Run demo
+        run: ./demo.sh
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verification-artifacts
+          path: |
+            warehouse_out/
+            seeds/truth_manifest.json

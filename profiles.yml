@@ -1,0 +1,6 @@
+visigrid_demo:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: target/demo.duckdb

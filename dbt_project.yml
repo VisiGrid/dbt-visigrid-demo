@@ -1,0 +1,13 @@
+name: visigrid_demo
+version: "1.0.0"
+profile: visigrid_demo
+
+config-version: 2
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target"]
+
+vars:
+  mismatch: false
