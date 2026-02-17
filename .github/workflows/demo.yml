@@ -22,13 +22,9 @@ jobs:
 
       - name: Install vgrid
         run: |
-          # Build from source (adjust path if using a release binary)
-          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-          source "$HOME/.cargo/env"
-          cargo install --path ../visigrid/app/crates/cli || {
-            echo "::warning::vgrid not available from source, skipping"
-            exit 1
-          }
+          curl -sL https://github.com/VisiGrid/VisiGrid/releases/latest/download/VisiGrid-linux-x86_64.tar.gz | tar xz
+          sudo install VisiGrid-linux-x86_64/vgrid /usr/local/bin/
+          vgrid --version
 
       - name: Run demo
         run: ./demo.sh
